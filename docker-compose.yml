@@ -1,13 +1,13 @@
 services:
   postgres:
     image: postgres:14.1
-    container_name: quarkus_test
+    container_name: ${DB_NAME}
     environment:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-      - 5432:5432
+      - ${DB_PORT}:5432
     networks:
       - tasks-network
     healthcheck:

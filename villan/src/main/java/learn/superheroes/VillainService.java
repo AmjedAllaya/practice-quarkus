@@ -4,12 +4,14 @@ package learn.superheroes;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.util.List;
 
 import static jakarta.transaction.Transactional.TxType.SUPPORTS;
 
 @ApplicationScoped
+//@ConfigProperty(name = "level.multiplier", defaultValue="1.0") double levelMultiplier;
 @Transactional
 public class VillainService {
     @Transactional(SUPPORTS)
